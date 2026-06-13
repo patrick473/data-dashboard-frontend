@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+/app/api/data-dashboard-api
+# heroui-agents-md
+.heroui-docs/

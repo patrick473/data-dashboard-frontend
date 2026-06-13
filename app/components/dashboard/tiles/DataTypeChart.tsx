@@ -1,7 +1,7 @@
 "use client";
 
 import { Pie, PieChart, ResponsiveContainer, Tooltip, Legend } from "recharts";
-import type { ColumnMetadata } from "../types";
+import type { ColumnMetadata } from "../../../types";
 
 const DTYPE_COLORS: Record<string, string> = {
   string: "#6366f1",
