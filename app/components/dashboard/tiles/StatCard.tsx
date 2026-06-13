@@ -10,6 +10,7 @@ export default function StatCard({ label, value, sub }: Readonly<StatCardProps>)
     <Card>
       <Card.Header>
         <Card.Title>{label}</Card.Title>
+        </Card.Header>
         <Card.Content>
         <p className="mt-1 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
         {value}
@@ -18,8 +19,6 @@ export default function StatCard({ label, value, sub }: Readonly<StatCardProps>)
         <p className="mt-1 text-xs text-zinc-400 dark:text-zinc-500">{sub}</p>
       )}
         </Card.Content>
-      </Card.Header>
-
     </Card>
   );
 }

@@ -2,6 +2,7 @@
 
 import { Pie, PieChart, ResponsiveContainer, Tooltip, Legend } from "recharts";
 import type { ColumnMetadata } from "../../../types";
+import { Card } from "@heroui/react/card";
 
 const DTYPE_COLORS: Record<string, string> = {
   string: "#6366f1",
@@ -28,10 +29,11 @@ export default function DataTypeChart({ columns }: Readonly<Props>) {
   }));
 
   return (
-    <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-      <h2 className="mb-4 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+   <Card>
+      <Card.Header>
         Column Data Types
-      </h2>
+      </Card.Header>
+      <Card.Content>
       <ResponsiveContainer width="100%" height={260}>
         <PieChart>
           <Pie
@@ -59,6 +61,7 @@ export default function DataTypeChart({ columns }: Readonly<Props>) {
           <Legend iconSize={10} iconType="circle" wrapperStyle={{ fontSize: "12px" }} />
         </PieChart>
       </ResponsiveContainer>
-    </div>
+      </Card.Content>
+    </Card>
   );
 }
