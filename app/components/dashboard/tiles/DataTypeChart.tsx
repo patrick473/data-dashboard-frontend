@@ -53,9 +53,10 @@ export default function DataTypeChart({ columns }: Readonly<Props>) {
           <Tooltip
             formatter={(value, name) => [value, name]}
             contentStyle={{
-              borderRadius: "8px",
+              borderRadius: "var(--radius-2xl)",
               fontSize: "12px",
-              border: "1px solid #e4e4e7",
+              border: "1px solid var(--border)",
+              backgroundColor: "var(--surface)",
             }}
           />
           <Legend iconSize={10} iconType="circle" wrapperStyle={{ fontSize: "12px" }} />
