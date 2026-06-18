@@ -30,6 +30,7 @@ export default function Header() {
         </h1>
         <nav className="flex items-center gap-6 text-sm">
           {navLink("/", "Overview")}
+          {navLink("/column", "Column Detail")}
           {navLink("/compare", "Compare")}
         </nav>
       </div>

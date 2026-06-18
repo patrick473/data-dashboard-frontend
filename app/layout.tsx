@@ -15,10 +15,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-    
+      suppressHydrationWarning
       className="dark" data-theme="dark"
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
+      <body suppressHydrationWarning className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
     </html>
   );
 }

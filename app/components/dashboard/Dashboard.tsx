@@ -62,7 +62,7 @@ export default async function Dashboard({ fileName, availableFiles }: Readonly<{
       <UniqueValuesChart columns={data.columns as ColumnMetadata[]} />
 
       {/* Column stats table */}
-      <ColumnStatsTable columns={data.columns as ColumnMetadata[]} rowCount={data.total_rows} />
+      <ColumnStatsTable columns={data.columns as ColumnMetadata[]} rowCount={data.total_rows} fileName={fileName} />
     </main>
   );
 }

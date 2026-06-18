@@ -1,8 +1,11 @@
+"use client";
+
+import Link from "next/link";
 import { formatNumber } from "@/app/components/utils/formatNumber";
 import type { ColumnMetadata } from "../../../types";
 import { Card } from "@heroui/react/card";
 import { Table } from "@heroui/react/table";
-import { Chip, Tab, Tag } from "@heroui/react";
+import { Chip } from "@heroui/react";
 
 const DTYPE_BADGE: Record<string, string> = {
     string: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300",
@@ -15,9 +18,10 @@ const DTYPE_BADGE: Record<string, string> = {
 interface Props {
     columns: ColumnMetadata[];
     rowCount: number;
+    fileName: string;
 }
 
-export default function ColumnStatsTable({ columns, rowCount }: Readonly<Props>) {
+export default function ColumnStatsTable({ columns, rowCount, fileName }: Readonly<Props>) {
     return (
         <Card>
             <Card.Header>
@@ -46,7 +50,14 @@ export default function ColumnStatsTable({ columns, rowCount }: Readonly<Props>)
                                     "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400";
                                 return (
                                     <Table.Row key={col.name}>
-                                        <Table.Cell>{col.name}</Table.Cell>
+                                        <Table.Cell>
+                                            <Link
+                                                href={`/column?file=${encodeURIComponent(fileName)}&column=${encodeURIComponent(col.name)}`}
+                                                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                                            >
+                                                {col.name}
+                                            </Link>
+                                        </Table.Cell>
                                         <Table.Cell>
                                             <Chip className={badgeClass} size="sm">
                                                 {col.dtype}
