@@ -32,6 +32,7 @@ export default function Header() {
           {navLink("/", "Overview")}
           {navLink("/column", "Column Detail")}
           {navLink("/compare", "Compare")}
+          {navLink("/models", "Models")}
         </nav>
       </div>
     </header>
